@@ -33,3 +33,4 @@ plugins {
 }
 
 include(":app")
+include("sources:common:logging")
