@@ -33,4 +33,5 @@ plugins {
 }
 
 include(":app")
+include("domain:auth")
 include("sources:common:logging")
