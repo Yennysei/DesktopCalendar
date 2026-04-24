@@ -33,5 +33,11 @@ plugins {
 }
 
 include(":app")
-include("domain:auth")
+include("sources:common:cryptography")
+include("sources:common:di")
 include("sources:common:logging")
+include("sources:core:database")
+include("sources:core:http-client")
+include("sources:core:ui")
+include("sources:feature:auth")
+include("sources:feature:auth-ui")
