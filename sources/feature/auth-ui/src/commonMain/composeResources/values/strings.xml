@@ -1,0 +1,5 @@
+<resources>
+    <string name="welcome">Welcome</string>
+    <string name="sign_in_message">Sign in to your account to continue</string>
+    <string name="continue_with_google">Continue with Google</string>
+</resources>
