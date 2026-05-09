@@ -45,8 +45,6 @@ import dev.yenny.core.ui.IconDrawable
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
-private val ButtonText = Color(0xFF374151)
-
 @Composable
 internal fun AuthScreen(
     viewModel: AuthViewModel = viewModel(factory = AuthUiComponent.instance.viewModelFactory),
@@ -64,7 +62,7 @@ internal fun AuthScreenContent(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF0F2F5)),
+            .background(color = MaterialTheme.colorScheme.primaryContainer),
         contentAlignment = Alignment.Center,
     ) {
         LoginCard(state = state, onContinueWithGoogle = onContinueWithGoogle)
@@ -81,7 +79,7 @@ private fun LoginCard(
             .width(300.dp)
             .wrapContentHeight(),
         shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF)),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(
@@ -101,7 +99,7 @@ private fun LoginCard(
                 style = MaterialTheme.typography.titleLarge.copy(
                     fontSize = 22.sp,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color(0xFF1A1A2E),
+                    color = MaterialTheme.colorScheme.onBackground,
                 ),
                 textAlign = TextAlign.Center
             )
@@ -112,7 +110,7 @@ private fun LoginCard(
                 text = stringResource(Res.string.sign_in_message),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = 14.sp,
-                    color = Color(0xFF6B7280),
+                    color = MaterialTheme.colorScheme.onBackground,
                 ),
                 textAlign = TextAlign.Center
             )
@@ -130,7 +128,7 @@ private fun AppIcon() {
         modifier = Modifier
             .size(52.dp)
             .clip(RoundedCornerShape(14.dp))
-            .background(Color(0xFF3D5AFE)),
+            .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center
     ) {
         LockIcon()
@@ -157,11 +155,11 @@ private fun GoogleSignInButton(isDisabled: Boolean, onClick: () -> Unit) {
         shape = RoundedCornerShape(10.dp),
         border = androidx.compose.foundation.BorderStroke(
             width = 1.dp,
-            color = Color(0xFFE5E7EB),
+            color = MaterialTheme.colorScheme.onSurface,
         ),
         colors = ButtonDefaults.outlinedButtonColors(
-            containerColor = Color.White,
-            contentColor = ButtonText,
+            containerColor = Color.Transparent,
+            contentColor = MaterialTheme.colorScheme.primary,
         ),
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) {
@@ -178,7 +176,7 @@ private fun GoogleSignInButton(isDisabled: Boolean, onClick: () -> Unit) {
                 style = MaterialTheme.typography.labelLarge.copy(
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Medium,
-                    color = ButtonText
+                    color = MaterialTheme.colorScheme.onBackground
                 )
             )
         }
