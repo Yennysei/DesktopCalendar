@@ -9,12 +9,12 @@ import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSource
 import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSourceImpl
 import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSource
 import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSourceImpl
-import dev.yenny.calendar.auth.domain.GoogleAuthRepository
-import dev.yenny.calendar.auth.domain.GoogleAuthRepositoryImpl
-import dev.yenny.calendar.auth.domain.GoogleUserRepository
-import dev.yenny.calendar.auth.domain.GoogleUserRepositoryImpl
-import dev.yenny.calendar.auth.domain.LogInGoogleAccountUseCase
-import dev.yenny.calendar.auth.domain.LogInGoogleAccountUseCaseImpl
+import dev.yenny.calendar.auth.domain.repository.GoogleAuthRepository
+import dev.yenny.calendar.auth.domain.repository.GoogleAuthRepositoryImpl
+import dev.yenny.calendar.auth.domain.repository.GoogleUserRepository
+import dev.yenny.calendar.auth.domain.repository.GoogleUserRepositoryImpl
+import dev.yenny.calendar.auth.domain.usecase.LogInGoogleAccountUseCase
+import dev.yenny.calendar.auth.domain.usecase.LogInGoogleAccountUseCaseImpl
 import dev.yenny.calendar.di.lazySafePublication
 import dev.yenny.calendar.di.safePublicationReusable
 

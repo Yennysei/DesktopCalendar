@@ -1,4 +1,4 @@
-package dev.yenny.calendar.auth.domain
+package dev.yenny.calendar.auth.domain.repository
 
 import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSource
 import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSource

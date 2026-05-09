@@ -1,6 +1,7 @@
-package dev.yenny.calendar.auth.domain
+package dev.yenny.calendar.auth.domain.usecase
 
 import dev.yenny.calendar.auth.domain.model.AuthStatus
+import dev.yenny.calendar.auth.domain.repository.GoogleAuthRepository
 import dev.yenny.calendar.di.invoke
 import kotlinx.coroutines.flow.Flow
 
