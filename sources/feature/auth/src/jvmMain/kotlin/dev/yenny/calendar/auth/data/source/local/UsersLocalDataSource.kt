@@ -1,4 +1,4 @@
-package dev.yenny.calendar.auth.data
+package dev.yenny.calendar.auth.data.source.local
 
 import dev.yenny.calendar.auth.data.model.GoogleUserDb
 import dev.yenny.calendar.auth.domain.model.GoogleUser

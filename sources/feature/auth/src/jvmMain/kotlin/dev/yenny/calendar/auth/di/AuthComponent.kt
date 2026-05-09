@@ -1,14 +1,14 @@
 package dev.yenny.calendar.auth.di
 
-import dev.yenny.calendar.auth.data.GoogleAuthCodeRemoteDataSource
-import dev.yenny.calendar.auth.data.GoogleAuthCodeRemoteDataSourceImpl
-import dev.yenny.calendar.auth.data.GoogleAuthTokenRemoteDataSourceImpl
-import dev.yenny.calendar.auth.data.GoogleProfileRemoteDataSource
-import dev.yenny.calendar.auth.data.GoogleProfileRemoteDataSourceImpl
-import dev.yenny.calendar.auth.data.TokensLocalDataSource
-import dev.yenny.calendar.auth.data.TokensLocalDataSourceImpl
-import dev.yenny.calendar.auth.data.UsersLocalDataSource
-import dev.yenny.calendar.auth.data.UsersLocalDataSourceImpl
+import dev.yenny.calendar.auth.data.source.remote.GoogleAuthCodeRemoteDataSource
+import dev.yenny.calendar.auth.data.source.remote.GoogleAuthCodeRemoteDataSourceImpl
+import dev.yenny.calendar.auth.data.source.remote.GoogleAuthTokenRemoteDataSourceImpl
+import dev.yenny.calendar.auth.data.source.remote.GoogleProfileRemoteDataSource
+import dev.yenny.calendar.auth.data.source.remote.GoogleProfileRemoteDataSourceImpl
+import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSource
+import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSourceImpl
+import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSource
+import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSourceImpl
 import dev.yenny.calendar.auth.domain.GoogleAuthRepository
 import dev.yenny.calendar.auth.domain.GoogleAuthRepositoryImpl
 import dev.yenny.calendar.auth.domain.GoogleUserRepository

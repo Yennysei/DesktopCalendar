@@ -1,7 +1,7 @@
 package dev.yenny.calendar.auth.domain
 
-import dev.yenny.calendar.auth.data.TokensLocalDataSource
-import dev.yenny.calendar.auth.data.UsersLocalDataSource
+import dev.yenny.calendar.auth.data.source.local.TokensLocalDataSource
+import dev.yenny.calendar.auth.data.source.local.UsersLocalDataSource
 import dev.yenny.calendar.auth.domain.model.GoogleTokens
 import dev.yenny.calendar.auth.domain.model.GoogleUser
 import dev.yenny.calendar.di.invoke

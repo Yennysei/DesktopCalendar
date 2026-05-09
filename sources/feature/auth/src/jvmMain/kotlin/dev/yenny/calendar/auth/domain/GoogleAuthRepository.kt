@@ -1,9 +1,9 @@
 package dev.yenny.calendar.auth.domain
 
-import dev.yenny.calendar.auth.data.GoogleAuthCodeRemoteDataSource
-import dev.yenny.calendar.auth.data.AuthCodeStatus
-import dev.yenny.calendar.auth.data.GoogleAuthTokenRemoteDataSource
-import dev.yenny.calendar.auth.data.GoogleProfileRemoteDataSource
+import dev.yenny.calendar.auth.data.source.remote.GoogleAuthCodeRemoteDataSource
+import dev.yenny.calendar.auth.data.source.remote.AuthCodeStatus
+import dev.yenny.calendar.auth.data.source.remote.GoogleAuthTokenRemoteDataSource
+import dev.yenny.calendar.auth.data.source.remote.GoogleProfileRemoteDataSource
 import dev.yenny.calendar.auth.domain.model.AuthStatus
 import dev.yenny.calendar.di.invoke
 import kotlinx.coroutines.CoroutineDispatcher

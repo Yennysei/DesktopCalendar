@@ -1,4 +1,4 @@
-package dev.yenny.calendar.auth.data
+package dev.yenny.calendar.auth.data.source.remote
 
 import dev.yenny.calendar.auth.data.model.TokensApiResponse
 import dev.yenny.calendar.auth.util.buildQueryParameters
