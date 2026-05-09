@@ -5,6 +5,10 @@ import dev.yenny.calendar.auth.data.GoogleAuthCodeRemoteDataSourceImpl
 import dev.yenny.calendar.auth.data.GoogleAuthTokenRemoteDataSourceImpl
 import dev.yenny.calendar.auth.data.GoogleProfileRemoteDataSource
 import dev.yenny.calendar.auth.data.GoogleProfileRemoteDataSourceImpl
+import dev.yenny.calendar.auth.data.TokensLocalDataSource
+import dev.yenny.calendar.auth.data.TokensLocalDataSourceImpl
+import dev.yenny.calendar.auth.data.UsersLocalDataSource
+import dev.yenny.calendar.auth.data.UsersLocalDataSourceImpl
 import dev.yenny.calendar.auth.domain.GoogleAuthRepository
 import dev.yenny.calendar.auth.domain.GoogleAuthRepositoryImpl
 import dev.yenny.calendar.auth.domain.GoogleUserRepository
@@ -13,7 +17,6 @@ import dev.yenny.calendar.auth.domain.LogInGoogleAccountUseCase
 import dev.yenny.calendar.auth.domain.LogInGoogleAccountUseCaseImpl
 import dev.yenny.calendar.di.lazySafePublication
 import dev.yenny.calendar.di.safePublicationReusable
-import kotlinx.coroutines.Dispatchers
 
 interface AuthComponent {
 
@@ -42,9 +45,15 @@ internal class AuthComponentImpl(
             GoogleProfileRemoteDataSourceImpl(client = httpClient)
         }
 
+    private val usersLocalDataSource: Lazy<UsersLocalDataSource>
+        get() = lazySafePublication { UsersLocalDataSourceImpl(database = database) }
+
+    private val tokensLocalDataSource: Lazy<TokensLocalDataSource>
+        get() = lazySafePublication { TokensLocalDataSourceImpl(database = database) }
+
     private val googleAuthRepository: Lazy<GoogleAuthRepository> = safePublicationReusable {
         GoogleAuthRepositoryImpl(
-            ioDispatcher = Dispatchers.IO,
+            ioDispatcher = ioDispatcher,
             userRepository = googleUserRepository,
             codeDataSource = googleAuthCodeRemoteDataSource,
             tokenDataSource = googleAuthTokenRemoteDataSource,
@@ -54,8 +63,9 @@ internal class AuthComponentImpl(
 
     override val googleUserRepository: Lazy<GoogleUserRepository> = lazySafePublication {
         GoogleUserRepositoryImpl(
-            database = database,
-            ioDispatcher = Dispatchers.IO,
+            ioDispatcher = ioDispatcher,
+            usersDataSource = usersLocalDataSource,
+            tokensDataSource = tokensLocalDataSource,
         )
     }
 
